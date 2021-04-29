@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from './components/Header'
 import Main from './components/Main'
+import Coffees from './components/Coffees'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -16,6 +17,7 @@ function App() {
         <section className="main-section">
       <Main />
       </section>
+      <Coffees />
       <Footer />
     </div>
   )
