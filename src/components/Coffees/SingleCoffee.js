@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function SingleCoffee({ item }) {
+function SingleCoffee({ coffee }) {
+    if(!coffee.title){
+        return null
+    }
+    const slug = coffee.title.toLowerCase().replace(' ', '-')
   return (
-    <li key={item.id}>
-      <div>
-        <h3>{item.title}</h3>
-        <span>{item.description}</span>
-      </div>
-    </li>
+    <h3>
+        <Link to={`/coffees/${slug}`}>{coffee.title}</Link>
+    </h3>
   )
 }
 

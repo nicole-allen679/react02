@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Main from './components/Main'
 import Coffees from './components/Coffees'
+import CoffeeDetails from './components/Coffees/CoffeeDetails'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -16,12 +17,9 @@ function App() {
         </header>
         <section className="main-section">
           <Switch>
-            <Route path="/coffee">
-              <Coffees />
-            </Route>
-            <Route path="/">
-              <Main />
-            </Route>
+            <Route path="/coffees/:slug" component={CoffeeDetails} />
+            <Route path="/coffees" component={Coffees} />
+            <Route path="/" component={Main} />
           </Switch>
         </section>
         <Footer />
